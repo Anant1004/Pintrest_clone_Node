@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pinterest Clone</title>
+
+</head>
+
+<body class="bg-white flex flex-col font-sans h-screen">
+    <nav class="bg-white p-4  h-17">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="/images/Pinterest-logo.png" alt="Logo" class="w-8 h-8">
+                <a href="#" class="bg-black text-white p-2 px-3 rounded-3xl font-semibold">Home</a>
+                <a href="#" class="text-black font-semibold">Explore</a>
+                <a href="#" class="text-black font-semibold">Saved</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="flex mx-4 ml-9 bg-gray-200 rounded-3xl items-center px-4 w-3/4">
+                <i class='bx bx-search-alt-2 text-xl'></i>
+                <input type="text" placeholder="Search" class="w-full p-3  rounded-3xl bg-transparent outline-none">
+            </div>
+            <!-- User Avatar -->
+            <div class=" flex items-center relative  gap-4 ">
+                <i class='bx bxs-bell text-3xl'></i>
+                <i class='bx bxs-message-dots text-3xl'></i>
+                <img src="/images/uploads/<%=user.dp  %>" class="w-8 h-8 rounded-full cursor-pointer">
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-[1440px] gap-2 mx-8  my-auto" style="columns: 5;">
+        <% posts.forEach(elem => { %>
+            <div class="box ">
+                <img class="rounded-3xl h-auto mb-2 object-cover" src="/images/uploads/<%=elem.image  %>">
+            </div>
+        <% }) %>
+    </div>
+</body>
+
+</html> 

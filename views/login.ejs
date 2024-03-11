@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login here</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="content" method="post" action="/login">
+            <!--pinterest logo-->
+            <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+            <h1 class="header">Login Here</h1>
+            <% if (error.length > 0) { %>
+                <p class="error"><%= error %></p>
+            <% } %>
+            <input type="text" name="username" placeholder="Username" class="detail" />
+            <input type="password" name="password" placeholder="Password" class="detail" />
+            <a href="#" id="forgot">Forgot your password?</a>
+            <a href="/" >Don't have an account?</a>
+            <button type="submit" class="btn int">LOGIN</button>
+        </form>
+    </div>
+</body>
+
+</html>

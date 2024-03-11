@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+
+            body{
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+            }
+            .first-section{
+                scroll-snap-align: start;
+            }
+            #second{
+                scroll-snap-type: start;
+
+            }
+            .typed-cursor{
+                display: none;
+            }
+            ::-webkit-scrollbar {
+                /* width: 5px; */
+                display: none;
+            }
+            #login{
+                background-image: url(/images/login.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                background-position: center;
+            }
+            #login::after{
+                position: absolute;
+                content: " ";
+                top: 0;
+                height: 100vh;
+                width: 100%;
+                background-color: black;
+                opacity: 0.5;
+                /* z-index: 14; */
+
+            }
+
+</style>
+    </head>
+
+    <body class="w-[100%] h-[100%] ">
+        <!-- nav started here -->
+        <nav class="w-[100%] h-20 fixed top-0 p-4 flex justify-between bg-white z-[15]">
+            <div class="left-section h-[100%] flex justify-start">
+                <div class="logo flex h-[100%] w-[145px] justify-start items-center gap-1 px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                              viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20" fill="#E60023"></circle>
+                        <path fill="#FFF"
+                                  d="M24.4439087,11.4161377c-8.6323242,0-13.2153931,5.7946167-13.2153931,12.1030884	c0,2.9338379,1.5615234,6.5853882,4.0599976,7.7484131c0.378418,0.1762085,0.581543,0.1000366,0.668457-0.2669067	c0.0668945-0.2784424,0.4038086-1.6369019,0.5553589-2.2684326c0.0484619-0.2015381,0.0246582-0.3746338-0.1384277-0.5731201	c-0.8269653-1.0030518-1.4884644-2.8461304-1.4884644-4.5645752c0-4.4115601,3.3399658-8.6799927,9.0299683-8.6799927	c4.9130859,0,8.3530884,3.3484497,8.3530884,8.1369019c0,5.4099731-2.7322998,9.1584473-6.2869263,9.1584473	c-1.9630737,0-3.4330444-1.6238403-2.9615479-3.6153564c0.5654297-2.3769531,1.6569214-4.9415283,1.6569214-6.6584473	c0-1.5354004-0.8230591-2.8169556-2.5299683-2.8169556c-2.006958,0-3.6184692,2.0753784-3.6184692,4.8569336	c0,1.7700195,0.5984497,2.9684448,0.5984497,2.9684448s-1.9822998,8.3815308-2.3453979,9.9415283	c-0.4019775,1.72229-0.2453003,4.1416016-0.0713501,5.7233887l0,0c0.4511108,0.1768799,0.9024048,0.3537598,1.3687744,0.4981079l0,0	c0.8168945-1.3278198,2.0349731-3.5056763,2.4864502-5.2422485c0.2438354-0.9361572,1.2468872-4.7546387,1.2468872-4.7546387	c0.6515503,1.2438965,2.5561523,2.296936,4.5831299,2.296936c6.0314941,0,10.378418-5.546936,10.378418-12.4400024	C36.7738647,16.3591919,31.3823242,11.4161377,24.4439087,11.4161377z">
+                        </path>
+                    </svg>
+                    <h1 class="text-red-600 text-[20px] font-semibold">Pinterest</h1>
+                </div>
+                <div class="left-nav flex h-[100%] w-[220px] justify-between items-center gap-1">
+                    <a class="font-semibold" href="">Today</a>
+                    <a class="font-semibold" href="">Watch</a>
+                    <a class="font-semibold" href="">Explore</a>
+                </div>
+            </div>
+            <div class="right-section w-[420px] flex justify-between">
+                <div class="right-first flex h-[100%] w-[220px] justify-between items-center gap-1">
+                    <a class="font-semibold" href="">About</a>
+                    <a class="font-semibold" href="">Bussines</a>
+                    <a class="font-semibold" href="">Press</a>
+                </div>
+                <div class="right-mid flex h-[100%] w-[100px] justify-end items-center ml-4">
+                    <a class="text-white font-semibold bg-red-600 rounded-[20px] px-3 py-2 w-[80%] text-center"
+                              href="/login">Login</a>
+                </div>
+                <div class="right-last flex h-[100%] w-[100px] justify-end items-center gap-1">
+                    <a class="text-black font-semibold bg-gray-200 rounded-[20px] px-3 py-2 text-center" href="/register">Sign
+                        Up</a>
+                </div>
+            </div>
+        </nav>
+        <!-- nav end here -->
+        <div class="first-section w-[100%] h-[300px] flex flex-col items-center justify-end gap-3 ">
+            <h1 class="w-full font-semibold text-6xl text-center">Get your yext</h1>
+            <h1 id="typed" class="w-full font-semibold text-6xl text-center text-amber-500">
+                chai time snacks idea
+            </h1>
+            <div class="dot flex justify-center items-center w-full gap-3">
+                <div class="bg-gray-200 rounded-full h-2 w-2"></div>
+                <div class="bg-gray-200 rounded-full h-2 w-2"></div>
+                <div class="bg-gray-200 rounded-full h-2 w-2"></div>
+                <div class="bg-gray-200 rounded-full h-2 w-2"></div>
+            </div>
+        </div>
+        <div class="slider w-full h-[600px]  px-8 flex gap-5 mt-[-190px] overflow-hidden relative z-[-2]">
+            <div class="slides h-full w-[300px] ml-[-150px] mt-[100px] flex flex-col gap-4">
+                <img src="https://picsum.photos/256/300" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/223/300" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/201/300" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mt-[250px] flex flex-col gap-4">
+                <img src="https://picsum.photos/287/370" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/223/360" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]"  alt="" />
+                <img src="https://picsum.photos/201/3060" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mt-[350px] flex flex-col gap-4 ">
+                <img src="https://picsum.photos/247/770" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/243/660" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/204/660" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mt-[450px] flex flex-col gap-4">
+                <img src="https://picsum.photos/242/270" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/248/560" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/209/660" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mt-[350px] flex flex-col gap-4">
+                <img src="https://picsum.photos/247/470" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/243/260" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/904/760" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mt-[250px] flex flex-col gap-4">
+                <img src="https://picsum.photos/237/440" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/643/340" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/274/460" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+            <div class="slides h-full w-[300px] mr-[-150px] mt-[100px] flex flex-col gap-4">
+                <img src="https://picsum.photos/347/570" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/293/660" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+                <img src="https://picsum.photos/264/560" class="w-[98%] h-[300px] flex flex-col gap-4 rounded-[16px]" alt="" />
+            </div>
+        </div>
+        <a href="#second" class="w-[100vw] h-14 absolute flex justify-center items-center bottom-[80px]"><div class="down-arrow w-14 h-14 bg-green-800 rounded-[50%] flex justify-center items-center">
+            <i class='bx bx-chevron-down text-white text-5xl'></i>
+        </div></a>
+<!-- image gallary is ened -->
+
+
+<!-- second setion started here  -->
+<section id="second" class="h-[110vh] w-full bg-yellow-200 flex flex-col justify-between  mt-[-70px] z-[12]">
+    <h2 class="text-center p-4 font-semibold ml-3">Here’s how it works <i class='bx bx-chevron-down'></i></h2>
+    <div class="second-main w-full h-[90%]  flex">
+        <a href="" class="second-left-side  h-full w-[50%]  relative flex justify-center items-center">
+            <img  class="h-[65%] absolute z-[3]" src="/images/img1.png" alt="">
+            <img class="h-[40%]  absolute left-16 z-[1]" src="/images/img2.png" alt="">
+            <img  class="h-[30%] absolute top-8 right-[140px]" src="/images/img3.png" alt="">
+            <img  class="h-[40%] absolute bottom-8 right-[140px]" src="/images/img4.png" alt="">
+            <div class="search bg-white h-[70px] w-[40%] z-[4] rounded-full flex justify-center items-center font-bold text-2xl"><i class='bx bx-search font-semibold text-center mt-1'></i>Easy chicken search</div>
+        </a>
+
+    <div class="second-right-side  h-full w-[50%]  flex justify-center items-center flex-col gap-4">
+        <h1 class="text-6xl font-bold text-red-500">Search for an idea</h1>
+        <h4 class="w-[50%] text-center text-red-500 text-[1.2rem]">What do you want to try next? Think of something you’re into – such as 'easy chicken dinner' – and see what you find.</h4>
+        <button class="py-2 px-5 bg-red-500 rounded-full text-white">Explore</button>
+    </div>
+</section>
+
+<section id="third" class="h-[110vh] w-full bg-green-100 flex flex-col justify-center z-[12]">
+    <div class="second-main w-full h-[90%]  flex">
+        <div class="second-right-side  h-full w-[50%]  flex justify-center items-center flex-col gap-4">
+            <h1 class="text-6xl font-bold text-green-600">Save idea you like</h1>
+            <h4 class="w-[50%] text-center text-green-600 text-[1.2rem]">Collect your favourites so you can get back them later</h4>
+            <button class="py-2 px-5 bg-green-600 rounded-full text-white">Explore</button>
+        </div>
+
+        <a href="" class="second-left-side  h-full w-[50%]  relative flex justify-center items-center">
+            <img  class="h-[55%] absolute z-[3] top-14" src="/images/img5.png" alt="">
+            <img  class="h-[35%] absolute z-[3] bottom-[-38px]" src="/images/img6.png" alt="">
+        </a>
+</section>
+
+<section id="four" class="h-[100vh] w-full bg-pink-200 flex flex-col justify-between z-[12]">
+    <div class="second-main w-full h-[90%]  flex">
+        <a href="" class="second-left-side  h-[100vh] w-[50%]  relative flex justify-center items-center">
+            <img  class=" w-full h-[100%] z-[3]" src="/images/image.png" alt="">
+        </a>
+
+    <div class="second-right-side  w-[50%]  h-[100vh] flex justify-center items-center flex-col gap-4">
+        <h1 class="text-6xl font-bold text-red-500">Search for an idea</h1>
+        <h4 class="w-[50%] text-center text-red-500 text-[1.2rem]">What do you want to try next? Think of something you’re into – such as 'easy chicken dinner' – and see what you find.</h4>
+        <button class="py-2 px-5 bg-red-500 rounded-full text-white">Explore</button>
+    </div>
+</section>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script>
+            gsap.from(".down-arrow" ,{
+                y:20,
+                scrub:2,
+                yoyo :true,
+                duration:1,
+                repeat:Infinity
+
+            })
+            gsap.from(".search", {
+                x:15,
+                scrub:1,
+                yoyo:true,
+                duration:1,
+                repeat:Infinity,
+            })
+        </script>
+        <script>
+            var typed = new Typed('#typed', {
+            strings: ['Amimal love', 'Flowers makes day Perfect', 'home décor idea' ,'outfit idea', 'DIY idea'],
+            typeSpeed: 90,
+            loop: true,
+            });
+        </script>
+    </body>
+</html>
